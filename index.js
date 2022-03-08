@@ -46,6 +46,22 @@ function validateMobileNumber(){
     }
 }
 
+function validateEmail(){
+    const email = document.getElementById('email');
+    if(email.value.length == 0){
+        display_msg('email_msg','This field is required !!!', 'red');
+        return false;
+    }
+    else if(!email.value.toLowerCase().match(/^[a-z][a-z0-9]+([.-]{1}?[a-z0-9]+)*[@]\w+\.\w+$/)){
+        display_msg('email_msg','Invalid email !!!', 'red');
+        return false;
+    }
+    else{
+        display_msg('email_msg','','');
+        return true;
+    }
+}
+
 
 function display_msg(element, msg, color){
     const msgBox = document.getElementById(element);
