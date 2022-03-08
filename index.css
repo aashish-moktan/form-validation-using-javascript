@@ -13,7 +13,7 @@ body {
 #box {
     width: 400px;
     height: auto;
-    padding: 55px 30px;
+    padding: 25px 30px 45px;
     background: rgba(255,255,255,0.7);
     position: absolute;
     top: 50%;
@@ -39,4 +39,13 @@ button {
     border: none;
     width: 100px;
     height: 35px;
+    margin-bottom: 5px;
+}
+#success-msg{
+    display: none;
+    padding:0;
+    margin:0;
+    text-align:center;
+    font-weight: bold;
+    color: #000;
 }

@@ -1,3 +1,24 @@
+function createAccount(){
+    const loaderIcon = document.querySelector('.loader-icon');
+    const successMsg = document.getElementById('success-msg');
+    const form = document.querySelector('form');
+    if(validateFullname() && validateMobileNumber() && validateEmail() && validatePassword()){
+        loaderIcon.style.display = "";
+        setTimeout(()=>{
+            loaderIcon.style.display = "none";
+            successMsg.style.display = "block";
+        },2000);
+        setTimeout(()=>{
+            successMsg.style.display = "none";
+            form.reset();
+        },6000);
+        return false;
+    }
+    else{
+        return false;
+    }
+}
+
 function validateFullname(){
     const fullname = document.getElementById('fullname');
     if(fullname.value.length == 0) {
