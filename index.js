@@ -62,6 +62,42 @@ function validateEmail(){
     }
 }
 
+function validatePassword(){
+    const password = document.getElementById('password');
+    if(password.value.length == 0){
+        display_msg('password_msg', 'This field is required !!!', 'red');
+        return false;
+    }
+    else if(!password.value.match(/[A-Z]/)){
+        display_msg('password_msg','Password must have atleast one uppercase character','red');
+        return false;
+    }
+    else if(!password.value.match(/[a-z]/)){
+        display_msg('password_msg','Password must have atleast on lowercase character','red');
+        return false;
+    }
+    else if(!password.value.match(/\d/)){
+        display_msg('password_msg','Password must have atleast one digit');
+        return false;
+    }
+    else if(!password.value.match(/[-!$%^&*()_+|~=`{}\[\]:\/;<>?,.@#]/)){
+        display_msg('password_msg','Password must have atleast one special character','red');
+        return false;
+    }
+    else if(password.value.length < 8){
+        display_msg('password_msg','Password must have minimum length 8','red');
+        return false;
+    }
+    else if(password.value.length > 15){
+        display_msg('password_msg','Password can be of maximum length 15','red');
+        return false;
+    }
+    else {
+        display_msg('password_msg','','');
+        return true;
+    }
+}
+
 
 function display_msg(element, msg, color){
     const msgBox = document.getElementById(element);
